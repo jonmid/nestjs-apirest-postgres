@@ -14,8 +14,7 @@ export class BrandsService {
   }
 
   findOne(id: number) {
-    const product = this.brandsRepo.findOne({
-      where: { id },
+    const product = this.brandsRepo.findOne(id, {
       relations: ['products'],
     });
     if (!product) {
