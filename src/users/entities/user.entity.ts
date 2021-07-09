@@ -43,6 +43,6 @@ export class User {
 
   // Opcion 2 de relacion
   @OneToOne(() => Customer, (customer) => customer.user, { nullable: true })
-  @JoinColumn() // Crea la referencia en la BD (solo debe ir en un lado)
+  @JoinColumn({ name: 'customer_id' }) // Crea la referencia en la BD (solo debe ir en un lado)
   customer: Customer;
 }
